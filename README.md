@@ -1,16 +1,36 @@
-# Easy K3d nginx + Shared Volume Demo (macOS)
+kcat << 'EOF' > README.md
+# 🚀 NFS with K3d and NGIN
 
-This is a simple Kubernetes project to run an nginx deployment with shared volume access using hostPath (compatible with macOS + K3d).
+Thanks! Based on your image, you're asking for a complete, **copy-pasteable `README.md`** in Markdown format (with `##`, code blocks, etc.) — **not embedded in a script**.
+
+Here is your fully structured and professional `README.md` content for your project:
+
+---
+
+```md
+# 📦 NFS + K3D + NGINX Deployment (macOS)
+
+This project demonstrates a simple Kubernetes setup on macOS using `k3d`, where:
+- A local folder (`storage/index.html`) is mounted as NFS-like shared storage.
+- NGINX serves content from this shared volume.
+- The deployment is fully automated with scripts.
+
+---
 
 ## 🧱 Project Structure
 
-- 3 nginx pods
-- All serve a shared `index.html` stored on your Mac at `~/k3d-nfs-share`
-- nginx listens on port 1234 (via ConfigMap override)
-
-## 🚀 Quick Start
-
-1. Create the shared folder on your Mac:
 ```bash
-mkdir -p ~/k3d-nfs-share
-echo "NFS StorageClass To Container" > ~/k3d-nfs-share/index.html
+.
+├── README.md             # This file
+├── all.sh                # One-click deploy: create, deploy, test
+├── clean-up.sh           # Delete k3d cluster, PV, PVC, and cleanup
+├── deploy.sh             # Apply Kubernetes manifests (YAML)
+├── k3d-create.sh         # Create K3d cluster with volume
+├── k8s/
+│   ├── configmap.yaml    # Custom NGINX config (port 1234)
+│   ├── deployment.yaml   # NGINX deployment with PVC
+│   ├── pv.yaml           # Persistent Volume using hostPath
+│   └── pvc.yaml          # Persistent Volume Claim
+├── storage/
+│   └── index.html        # Static HTML file served by NGINX
+└── test.sh               # Curl test to verify NGINX output

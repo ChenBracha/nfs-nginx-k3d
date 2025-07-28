@@ -200,7 +200,7 @@ This removes:
 
 ## 🙋‍♂️ Author
 
-User:  Chen Bracha
+Chen Bracha
 
 ---
 

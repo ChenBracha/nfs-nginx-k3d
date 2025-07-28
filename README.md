@@ -1,13 +1,5 @@
 kcat << 'EOF' > README.md
-# 🚀 NFS with K3d and NGIN
-
-Thanks! Based on your image, you're asking for a complete, **copy-pasteable `README.md`** in Markdown format (with `##`, code blocks, etc.) — **not embedded in a script**.
-
-Here is your fully structured and professional `README.md` content for your project:
-
----
-
-```md
+# 🚀 NFS with K3d and NGINX
 # 📦 NFS + K3D + NGINX Deployment (macOS)
 
 This project demonstrates a simple Kubernetes setup on macOS using `k3d`, where:
